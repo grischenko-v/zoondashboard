@@ -1,0 +1,13 @@
+extends _layouts/home
+
+block head_end
+	link(rel="stylesheet" href="/css/style.css") 
+	link(href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet")
+
+block content
+	include _partials/infoblocks
+	include _partials/cards
+
+
+block body_end
+	script(type="text/javascript" src="/js/script.js")

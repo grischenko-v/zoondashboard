@@ -1,0 +1,47 @@
+.bage {
+	border: 1px solid #E6ECF2;
+	box-sizing: border-box;
+	border-radius: 4px;
+	padding: 5px 10px 3px 24px;
+	color: #222;
+	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: all 0.3s linear;
+	margin-bottom: 5px;
+
+	&:hover {
+		background-color: #5A39A7;
+		border-color: #5A39A7;
+		transition: all 0.3s linear;
+		color: #fff;
+
+		&:after {
+			background-image: url(../images/sign_white.svg);
+		}
+	}
+
+	&:after {
+		content: '';
+		height: 12px;
+		width: 10px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		background-size: cover;
+		background-image: url(../images/sign.svg);
+		background-repeat: no-repeat;
+	}
+
+	&_unsync {
+		&:after {
+			background-image: url(../images/sync.svg);
+		}
+		&:hover {
+			&:after {
+				background-image: url(../images/sync_white.svg);
+			}
+		}
+	}
+
+}

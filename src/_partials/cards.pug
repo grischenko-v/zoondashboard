@@ -1,0 +1,88 @@
+-
+	var cards = [{
+		id: 1,
+		title: "Google",
+		rating: 4.5,
+		reviews: 98,
+		noanswered: 15,
+		updates: 2,
+		needupdate: false,
+		disable: false,
+		shopscount: 100,
+		shopstunecount: 100,
+		bages: [
+			{
+				title: 'Cинхронизировано',
+				count: null
+			},
+			{
+				title: 'Инфа'
+			},
+			{
+				title: 'Прайс'
+			},
+			{
+				title: 'Фото'
+			},
+			{
+				title: 'Акции'
+			}
+		]
+	},
+	{
+		id: 2,
+		title: "Flado",
+		rating: null,
+		reviews: 98,
+		noanswered: 15,
+		updates: null,
+		needupdate: false,
+		disable: false,
+		shopscount: 100,
+		shopsserchcount: 5,
+		shopstunecount: 56,
+		bages: [
+			{
+				title: 'Cинхронизировано',
+				count: 3
+			},
+			{
+				title: 'Инфа'
+			},
+			{
+				title: 'Прайс'
+			},
+			{
+				title: 'Фото'
+			},
+			{
+				title: 'Акции'
+			}
+		]
+	},
+	{
+		id: 3,
+		title: "2Gis",
+		rating: null,
+		updates: null,
+		needupdate: false,
+		search: true,
+		disable: false,
+		bages: [
+			{
+				title: 'Cинхронизировано',
+				count: 3
+			}
+		]
+	},
+	{
+		id: 4,
+		title: "Yell",
+		disable: true,
+		bages: []
+	}
+	]
+
+.cards
+	each card in cards
+		include ./card

@@ -1,0 +1,43 @@
+.card(class=card.disable ? 'card_disable' : card.search ? 'card_serch' : '' )
+	.card__left
+		.card__header
+			.card__title.shops__item=card.title
+			-if(card.shopscount && card.shopscount == card.shopstunecount)
+				.card__shops.shops__item Все #{card.shopscount} заведений настроены
+			-else
+				-if(card.shopscount)
+					.card__shops.shops__item #{card.shopscount} заведений
+				-if(card.shopstunecount)
+					.card__shops.shops__item #{card.shopstunecount} настроено
+				-if(card.shopsserchcount)
+					.card__shops.shops__item #{card.shopsserchcount} впоиске
+		.card__bages
+				each bage in card.bages
+					.bage(class=bage.count ? "bage_unsync" : '')
+						-if(bage.count)
+							.bage__title Создаем #{bage.count} страницы
+						-else
+							.bage__title=bage.title
+		
+		-if (card.rating && !card.search && !card.disable)
+			.card__rating
+				.rating__count <span class="rating__countvalue">#{card.rating}</span> из 5
+				.rating__reviews  
+					| <span class="rating__reviewscount">#{card.reviews}</span> отзывов,
+					| <span class="rating__noansweredcount">#{card.noanswered}</span> неотвеченых
+		-else if(!card.search && !card.disable)
+			.card__rating
+				.rating__norating Портал без рейтинга
+		-else
+			.card__disableupdates Площядка отключена
+		-if(card.search)
+			.card__search Поиск заведений 15 из 78...
+	.card__right
+		.card__dots
+		-if(card.disable)
+			.card__turnon Вкючить
+		-if (card.updates && !card.disable)
+			.card__updates  <span class="rating__updatescount">#{card.updates}</span> обновления
+		-else if(!card.disable)
+			.card__needupdates Требует обновлений
+

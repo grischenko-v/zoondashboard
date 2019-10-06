@@ -1,0 +1,30 @@
+- 
+	var infoitems = [{
+				title: 'отзывов',
+				count: 165,
+				class: 'reviews'
+			},
+			{
+				title: 'неотвеченый отзыв',
+				count: 23,
+				class: 'unanswered'
+			},
+			{
+				title: 'обновлений',
+				count: 23,
+				class: 'updates'
+			},
+			{
+				title: 'средний рейтинг',
+				count: 24,
+				class: 'rating'
+			}]
+.infoblocks
+	.infoblocks__wrapper
+		each item, i in infoitems
+			-if(i<2)
+				include ./infoblock
+	.infoblocks__wrapper
+		each item, i in infoitems
+			-if(i>1)
+				include ./infoblock
